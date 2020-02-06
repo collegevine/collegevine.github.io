@@ -1,27 +1,31 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Seadragon: Zoomable Image</title>
-</head>
-<body style="display: flex; align-items: center; justify-content: center;">
-  <script src="seadragon-zoomimage-standalone.js"></script>
-  <script>
-    // Create multiscale image:
-    var image = new Seadragon2.Image();
-    image.src = 'dzc_output.xml'
-    image.style.width = '800px';
-    image.style.height = '600px';
-    document.body.appendChild(image);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Deep Zoom: Sparse Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body style="display: flex; align-items: center; justify-content: center;">
+    <script src="seadragon-zoomimage-standalone.js"></script>
+    <script>
+      // Create multiscale image:
+      var image = new Seadragon2.Image();
+      image.src = "dzc_output.xml";
+      image.style.width = "800px";
+      image.style.height = "600px";
+      document.body.appendChild(image);
 
-    // Make it zoomable:
-    var viewer = new Seadragon2.Viewer(image, {
-      viewportOptions: {
+      // Make it zoomable:
+      var viewer = new Seadragon2.Viewer(image, {
+        viewportOptions: {
           maxZoom: 32,
           minZoom: 0.25,
           visibilityRatio: 0.5
-      }
-    });
+        }
+      });
 
-    viewer.viewport.zoomTo(0.25)
-  </script>
-</body>
+      viewer.viewport.zoomTo(0.25);
+    </script>
+  </body>
 </html>
