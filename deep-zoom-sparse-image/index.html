@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Seadragon: Zoomable Image</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center;">
+  <script src="seadragon-zoomimage-standalone.js"></script>
+  <script>
+    // Create multiscale image:
+    var image = new Seadragon2.Image();
+    image.src = 'dzc_output.xml'
+    image.style.width = '800px';
+    image.style.height = '600px';
+    document.body.appendChild(image);
+
+    // Make it zoomable:
+    var viewer = new Seadragon2.Viewer(image, {
+      viewportOptions: {
+          maxZoom: 32,
+          minZoom: 0.25,
+          visibilityRatio: 0.5
+      }
+    });
+  </script>
+</body>
+</html>
